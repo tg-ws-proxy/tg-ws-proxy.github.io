@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- FE-Schrift XP Font -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -26,7 +25,7 @@
     <header class="header">
         <nav class="nav container">
             <div class="logo">
-                <span class="logo-emoji">⚡</span>
+                <span class="logo-emoji"></span>
                 <span class="logo-text">TG WS Proxy</span>
             </div>
             <ul class="nav-links">
@@ -107,7 +106,7 @@
                                 </div>
                                 <div class="tg-messages">
                                     <div class="message-in">
-                                        <div class="bubble">Привет! 👋</div>
+                                        <div class="bubble">Привет! </div>
                                     </div>
                                     <div class="message-out">
                                         <div class="bubble">Подключил прокси</div>
@@ -246,7 +245,7 @@
         </div>
     </section>
 
-    <!-- Download Section -->
+    <!-- Download Section (FIXED) -->
     <section class="download" id="download">
         <div class="container">
             <div class="section-header">
@@ -262,7 +261,11 @@
                     </div>
                     <h3>Windows 10</h3>
                     <p class="download-size">Размер: 45 МБ</p>
-                    <a href="https://raw.githubusercontent.com/tg-ws-proxy/tg-ws-proxy.github.io/main/TgWsProxy.exe" class="btn btn-premium btn-block" onclick="downloadFile(event, 'https://raw.githubusercontent.com/tg-ws-proxy/tg-ws-proxy.github.io/main/TgWsProxy.exe', 'TgWsProxy.exe')">Скачать .exe</a>
+                    <a href="https://raw.githubusercontent.com/tg-ws-proxy/tg-ws-proxy.github.io/main/TgWsProxy.exe" 
+                       class="btn btn-premium btn-block" 
+                       download="TgWsProxy.exe">
+                       Скачать .exe
+                    </a>
                     <p class="download-info">Windows 10 (все версии)</p>
                 </div>
 
@@ -273,7 +276,11 @@
                     </div>
                     <h3>Windows 11</h3>
                     <p class="download-size">Размер: 48 МБ</p>
-                    <a href="https://raw.githubusercontent.com/tg-ws-proxy/tg-ws-proxy.github.io/main/TgWsProxy.exe" class="btn btn-premium btn-block" onclick="downloadFile(event, 'https://raw.githubusercontent.com/tg-ws-proxy/tg-ws-proxy.github.io/main/TgWsProxy.exe', 'TgWsProxy.exe')">Скачать .exe</a>
+                    <a href="https://raw.githubusercontent.com/tg-ws-proxy/tg-ws-proxy.github.io/main/TgWsProxy.exe" 
+                       class="btn btn-premium btn-block" 
+                       download="TgWsProxy.exe">
+                       Скачать .exe
+                    </a>
                     <p class="download-info">Windows 11 (все версии)</p>
                 </div>
             </div>
