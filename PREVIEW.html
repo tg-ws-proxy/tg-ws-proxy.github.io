@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG WS Proxy - Превью Дизайна</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0f1117;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        .section {
+            padding: 40px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #3b82f6;
+        }
+        
+        h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #8b5cf6;
+        }
+        
+        h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #06b6d4;
+        }
+        
+        p {
+            color: #a1aac1;
+            margin-bottom: 15px;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .feature-card {
+            background: #1a1a2e;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .code-block {
+            background: #111118;
+            border: 1px solid #333;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+        }
+        
+        .highlight {
+            color: #10b981;
+        }
+        
+        .tag {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .stat-box {
+            background: #1a1a2e;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+        
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #3b82f6;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: #a1aac1;
+            margin-top: 5px;
+        }
+        
+        .download-preview {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .download-card {
+            background: #1a1a2e;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .download-card.featured {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.05));
+            border-color: rgba(59, 130, 246, 0.3);
+            position: relative;
+            transform: scale(1.02);
+        }
+        
+        .featured-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+        
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .timeline-item {
+            background: #1a1a2e;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 3px solid #3b82f6;
+            position: relative;
+        }
+        
+        .timeline-number {
+            position: absolute;
+            top: -15px;
+            left: 10px;
+            background: #0f1117;
+            color: #3b82f6;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border: 2px solid #3b82f6;
+        }
+        
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .benefit {
+            background: #1a1a2e;
+            padding: 20px;
+            border-radius: 8px;
+            border-top: 3px solid #3b82f6;
+        }
+        
+        .footer-info {
+            background: #111118;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .download-preview,
+            .timeline,
+            .benefits,
+            .stats {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Preview -->
+        <div class="section">
+            <h1>⚡ TG WS Proxy - Превью Сайта</h1>
+            <p>Полная визуализация современного лендинга для WebSocket прокси Telegram</p>
+        </div>
+
+        <!-- Statistics -->
+        <div class="section">
+            <h2>📊 Статистика Сайта</h2>
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="stat-number">450K+</div>
+                    <div class="stat-label">Пользователей</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">15ms</div>
+                    <div class="stat-label">Задержка</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">99.9%</div>
+                    <div class="stat-label">Uptime</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Серверов</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="section">
+            <h2>🧭 Навигация</h2>
+            <p>Фиксированный header с быстрым доступом ко всем разделам:</p>
+            <div style="margin-top: 15px;">
+                <span class="tag">⚡ TG WS Proxy (Logo)</span>
+                <span class="tag">Преимущества</span>
+                <span class="tag">Как работает</span>
+                <span class="tag">Скачать</span>
+                <span class="tag">Вопросы</span>
+                <span class="tag" style="background: #06b6d4;">Скачать (CTA)</span>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="section">
+            <h2>🎯 Hero Секция</h2>
+            <p>Яркая секция с привлекающим внимание заголовком и Telegram гифкой:</p>
+            <div class="code-block">
+                🔥 Уже 450 000+ активных пользователей
+                
+                <span class="highlight">ПРОКСИ ДЛЯ TELEGRAM,</span>
+                <span class="highlight">который просто работает</span>
+                
+                Получите доступ к Telegram даже если сеть заблокирована...
+                
+                [Скачать прокси] [Как работает]
+            </div>
+            <p>✨ <strong>Анимации:</strong> Плавающие орбы, частицы, градиентный текст, slide-up эффект при загрузке</p>
+        </div>
+
+        <!-- Timeline -->
+        <div class="section">
+            <h2>📅 Как это работает (3 шага)</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-number">1</div>
+                    <p style="margin-top: 15px;"><strong>Выберите срок</strong></p>
+                    <p style="font-size: 13px;">Тест на 3 дня или полная подписка</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">2</div>
+                    <p style="margin-top: 15px;"><strong>Оплатите онлайн</strong></p>
+                    <p style="font-size: 13px;">Картой или счёт по QR</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">3</div>
+                    <p style="margin-top: 15px;"><strong>Подключитесь</strong></p>
+                    <p style="font-size: 13px;">Скачайте конфиг или впишите данные</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Benefits -->
+        <div class="section">
+            <h2>✨ Преимущества (6 карточек)</h2>
+            <div class="benefits">
+                <div class="benefit">
+                    <div class="feature-icon">⚡</div>
+                    <p><strong>Молниеносная скорость</strong></p>
+                    <p style="font-size: 13px;">WebSocket протокол обеспечивает минимальную задержку</p>
+                </div>
+                <div class="benefit">
+                    <div class="feature-icon">🔒</div>
+                    <p><strong>Полная безопасность</strong></p>
+                    <p style="font-size: 13px;">Шифрование TLS 1.3 гарантирует конфиденциальность</p>
+                </div>
+                <div class="benefit">
+                    <div class="feature-icon">⏰</div>
+                    <p><strong>Работает 24/7</strong></p>
+                    <p style="font-size: 13px;">Гарантия 99.9% uptime и быстрая поддержка</p>
+                </div>
+                <div class="benefit">
+                    <div class="feature-icon">📦</div>
+                    <p><strong>Простая настройка</strong></p>
+                    <p style="font-size: 13px;">Автоматическая конфигурация одним кликом</p>
+                </div>
+                <div class="benefit">
+                    <div class="feature-icon">🚫</div>
+                    <p><strong>Без логирования</strong></p>
+                    <p style="font-size: 13px;">Полная приватность и анонимность</p>
+                </div>
+                <div class="benefit">
+                    <div class="feature-icon">💻</div>
+                    <p><strong>Все устройства</strong></p>
+                    <p style="font-size: 13px;">Windows 10, Windows 11 и другие ОС</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Download -->
+        <div class="section">
+            <h2>📥 Загрузка (2 версии Windows)</h2>
+            <div class="download-preview">
+                <div class="download-card">
+                    <h3>Windows 10</h3>
+                    <p style="color: #a1aac1; font-size: 14px;">Размер: 45 МБ</p>
+                    <div style="margin: 15px 0; padding: 10px; background: #0f1117; border-radius: 4px;">
+                        <span class="highlight">[Скачать .exe]</span>
+                    </div>
+                    <p style="font-size: 12px; color: #6b7280;">Windows 10 (все версии)</p>
+                </div>
+                <div class="download-card featured">
+                    <div class="featured-badge">⭐ РЕКОМЕНДУЕТСЯ</div>
+                    <h3>Windows 11</h3>
+                    <p style="color: #a1aac1; font-size: 14px;">Размер: 48 МБ</p>
+                    <div style="margin: 15px 0; padding: 10px; background: rgba(59, 130, 246, 0.2); border-radius: 4px;">
+                        <span class="highlight">[Скачать .exe]</span>
+                    </div>
+                    <p style="font-size: 12px; color: #6b7280;">Windows 11 (все версии)</p>
+                </div>
+            </div>
+            <p style="font-size: 12px; margin-top: 20px;">📦 Версия: 2.5.1 | Последнее обновление: сегодня</p>
+        </div>
+
+        <!-- FAQ -->
+        <div class="section">
+            <h2>❓ Часто задаваемые вопросы (6 карточек)</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <p><strong>Что такое WebSocket прокси?</strong></p>
+                    <p style="font-size: 13px;">Современный способ обхода блокировок, который маскирует трафик...</p>
+                </div>
+                <div class="feature-card">
+                    <p><strong>Безопасно ли использовать?</strong></p>
+                    <p style="font-size: 13px;">Да, используем TLS 1.3 и не храним логи активности...</p>
+                </div>
+                <div class="feature-card">
+                    <p><strong>Как настроить?</strong></p>
+                    <p style="font-size: 13px;">Получите инструкцию и ссылку для автоматической настройки...</p>
+                </div>
+                <div class="feature-card">
+                    <p><strong>Работает на мобильных?</strong></p>
+                    <p style="font-size: 13px;">Да, на Windows, macOS, Linux, iOS и Android...</p>
+                </div>
+                <div class="feature-card">
+                    <p><strong>Что если не работает?</strong></p>
+                    <p style="font-size: 13px;">Поддержка 24/7 через email или Telegram...</p>
+                </div>
+                <div class="feature-card">
+                    <p><strong>Есть ли возврат средств?</strong></p>
+                    <p style="font-size: 13px;">Все бесплатно! Никаких платежей вообще...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Design Features -->
+        <div class="section">
+            <h2>🎨 Дизайн Особенности</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌈</div>
+                    <p><strong>Цветовая схема</strong></p>
+                    <p style="font-size: 13px;">Синий, фиолетовый, голубой на темном фоне</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <p><strong>Анимации</strong></p>
+                    <p style="font-size: 13px;">Плавающие орбы, частицы, gradient текст</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <p><strong>Адаптивность</strong></p>
+                    <p style="font-size: 13px;">Desktop, Tablet, Mobile - все работает идеально</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <p><strong>Производительность</strong></p>
+                    <p style="font-size: 13px;">Быстрая загрузка, оптимизированный код</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <p><strong>Telegram гифки</strong></p>
+                    <p style="font-size: 13px;">Все иконки используют качественные гифки</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <p><strong>SEO готов</strong></p>
+                    <p style="font-size: 13px;">Семантическая разметка и мета теги</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Stack -->
+        <div class="section">
+            <h2>🔧 Технологии</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="footer-info">
+                    <p><strong>Frontend:</strong></p>
+                    <p style="font-size: 13px;">✓ HTML5 (семантическая разметка)<br>
+                    ✓ CSS3 (Grid, Flexbox, Animations)<br>
+                    ✓ JavaScript (Vanilla, без фреймворков)<br>
+                    ✓ Responsive Design<br>
+                    ✓ GIPHY API для гифок</p>
+                </div>
+                <div class="footer-info">
+                    <p><strong>Функции:</strong></p>
+                    <p style="font-size: 13px;">✓ Плавный скролл<br>
+                    ✓ Intersection Observer<br>
+                    ✓ Параллакс эффект<br>
+                    ✓ Ripple эффект<br>
+                    ✓ Анимированные счетчики</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final Info -->
+        <div class="section">
+            <h2>📂 Структура Проекта</h2>
+            <div class="code-block">
+                e:\tgws\
+                ├── index.html       (Главная страница)
+                ├── style.css        (Стили и анимации)
+                ├── script.js        (Интерактивность)
+                ├── VISUALIZATION.md (Текстовая визуализация)
+                └── PREVIEW.html     (Этот файл)
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="section">
+            <h2>🚀 Готово к использованию!</h2>
+            <div class="footer-info">
+                <p><strong>✅ Сайт полностью готов!</strong></p>
+                <p>Откройте <code>e:\tgws\index.html</code> в браузере (Chrome, Firefox, Safari, Edge)</p>
+                <p style="margin-top: 15px;">Все файлы находятся в папке: <code>e:\tgws\</code></p>
+                <p style="margin-top: 10px; font-size: 12px; color: #6b7280;">💡 Совет: Используйте F12 для просмотра мобильной версии</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
